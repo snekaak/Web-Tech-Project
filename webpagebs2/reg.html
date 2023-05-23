@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+    <title>Reg Form</title>
+    <style type="text/css">
+   
+        body{
+            font-family: Calibri;
+        }
+        input[type="text"] {
+            width: 350px;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: 50px;
+            height: 27px;
+            position: relative;left: 180px;
+        }
+        form{
+            text-align: center;
+            font-family: Calibri;
+            font-size: 15px;
+            border: 3px solid black;
+            width: 700px;
+            margin: 20px auto;
+        }
+        td {
+            padding: 0px;
+        }
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+        td:last-child {
+            text-align: left;
+        }
+
+    </style>
+    <script>
+        function validate() {
+            
+            var address = document.reg_form.address;
+            var gender = document.reg_form.gender;
+            var email = document.reg_form.email;
+            var mobile = document.reg_form.mobile;
+            var petvarity = document.reg_form.petvarity;
+
+            if (address.value.length <= 0) {
+                alert("Address is required");
+                address.focus();
+                return false;
+            }
+            if (gender.value.length <= 0) {
+                alert("Gender is required");
+                gender.focus();
+                return false;
+            }
+            if (email.value.length <= 0) {
+                alert("Email Id is required");
+                email.focus();
+                return false;
+            }
+            if (mobile.value.length <= 0) {
+                alert("Mobile number is required");
+                mobile.focus();
+                return false;
+            }
+            if (course.value == "select pet") {
+                alert("pet is required");
+                pet.focus();
+                return false;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+<link rel="stylesheet" href="reg.css">
+    <hr>
+    <form method="post" name="reg_form" onsubmit="return validate()">
+        <h2>Registration Form</h2>
+        <table>
+<tr>
+                <td><label>Email Id: </label></td>
+                <td>
+                    <input type="text" name="email" placeholder="example@gmail.com">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Address: </label></td>
+                <td>
+                    <input type="textarea" size="50" name="address" placeholder="Address">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Gender: </label></td>
+                <td><input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td><label>Mobile: </label></td>
+                <td>
+                    <input type="number" name="mobile">
+                </td>
+            </tr>
+            <tr>
+            <td><label>pets: </label></td>
+                <td>
+                    <select name="selectpets">
+                        <option name="selectpets" value="select pet">select pet</option>
+                         <option  name="selectpets" value="dog">DOG</option>
+                        <option  name="selectpets" value="Cat">CAT</option>
+                        <option name="selectpets" value="Rabbit">Rabbit</option>
+                        <option name="selectpets" value="Golden fish">Golden fish</option>
+                        <option name="selectpets" value="Budgeriga">Budgeriga</option>
+                        <option name="selectpets" value="Ferret">Ferret</option>
+                        <option name="selectpets" value="Cockatiel">Cockatiel</option>
+                        <option name="selectpets" value="guinea pig">guinea pig</option>
+                        <option name="selectpets" value="House kennalbed">House kennalbed</option>
+                        <option name="selectpets" value="Pet Foods">Pet Foods</option>
+                        <option name="selectpets" value="Beds">Beds</option> 
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="submit" value="Submit" formaction="http://localhost:5000/save">
+
+                    <input type="reset" name="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
